@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ag-canvas: 247 248 250;
+  --ag-surface: 255 255 255;
+  --ag-border: 226 229 233;
+  --ag-ink: 20 23 28;
+  --ag-muted: 107 114 128;
+  --ag-accent: 200 138 42; /* amber signal */
+}
+:root[data-theme='dark'] {
+  --ag-canvas: 13 15 19;
+  --ag-surface: 19 22 28;
+  --ag-border: 38 43 51;
+  --ag-ink: 229 231 235;
+  --ag-muted: 148 155 166;
+  --ag-accent: 224 165 74;
+}
+
+html, body, #root { height: 100%; }
+body { @apply bg-canvas text-ink font-sans antialiased; }
+
+.risk-LOW { color: #3fae7a; }
+.risk-MEDIUM { color: #d9a441; }
+.risk-HIGH { color: #e2683a; }
+.risk-CRITICAL { color: #d64545; }
+.bg-risk-LOW { background-color: rgb(63 174 122 / 0.12); }
+.bg-risk-MEDIUM { background-color: rgb(217 164 65 / 0.14); }
+.bg-risk-HIGH { background-color: rgb(226 104 58 / 0.14); }
+.bg-risk-CRITICAL { background-color: rgb(214 69 69 / 0.14); }
+
+::selection { background: rgb(var(--ag-accent) / 0.3); }
+* { scrollbar-width: thin; }
